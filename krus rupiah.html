@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Rupiah ke Dollar</title>
+</head>
+<body>
+
+    <label for="jumlahRupiah">Jumlah Rupiah:</label>
+    <input type="number" id="jumlahRupiah" onChange="hitungNilaiDollar()">
+    <br><br>
+    <label for="hasilDollar">Nilai Dollar:</label>
+    <input type="text" id="hasilDollar" readonly>
+
+    <script>
+        function hitungNilaiDollar() {
+            // Ambil nilai dari input jumlahRupiah
+            var jumlahRupiah = document.getElementById("jumlahRupiah").value;
+
+            // Konversi nilai input menjadi bilangan bulat
+            jumlahRupiah = parseInt(jumlahRupiah) || 0;
+
+            // Hitung nilai dollar berdasarkan kurs
+            var kursDollar = 14650; // Kurs 1$ = 14,650 rupiah
+            var nilaiDollar = jumlahRupiah / kursDollar;
+
+            // Tampilkan nilai dollar dalam elemen input hasilDollar
+            document.getElementById("hasilDollar").value = nilaiDollar.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>
